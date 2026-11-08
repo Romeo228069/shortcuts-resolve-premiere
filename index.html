@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shortcuts Resolve Premiere</title>
-<meta name="description" content="69 Schnittfunktionen mit Befehlsnamen und Mac-Tasten in DaVinci Resolve und Premiere Pro nebeneinander, mit Fallen und Suche. Deutsch und English.">
+<meta name="description" content="69 Schnittfunktionen mit Befehlsnamen und Tasten für Mac und Windows in DaVinci Resolve und Premiere Pro nebeneinander, mit Fallen und Suche. Deutsch und English.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gleiche Arbeit. Andere Tasten.">
-<meta property="og:description" content="69 Schnittfunktionen mit Befehlsnamen und Mac-Tasten in DaVinci Resolve und Premiere Pro nebeneinander, mit Fallen und Suche. Deutsch und English.">
+<meta property="og:description" content="69 Schnittfunktionen mit Befehlsnamen und Tasten für Mac und Windows in DaVinci Resolve und Premiere Pro nebeneinander, mit Fallen und Suche. Deutsch und English.">
 <meta property="og:url" content="https://romeo228069.github.io/shortcuts-resolve-premiere/">
 <meta property="og:image" content="https://romeo228069.github.io/shortcuts-resolve-premiere/og.png">
 <meta property="og:image:width" content="1200">
@@ -54,7 +54,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* Kopf */
 .hero{padding-block:56px 40px}
-.topline{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.topline{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;margin-bottom:14px}
+.switches{display:flex;gap:8px;flex:0 0 auto}
 .eyebrow{margin:0;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 h1{margin:0;font-size:clamp(2rem,5.4vw,3.3rem);line-height:1.07;font-weight:600;letter-spacing:-.015em;text-wrap:balance}
 .lead{margin:16px 0 0;max-width:38em;font-size:1.12rem;line-height:1.42;color:var(--muted)}
@@ -69,6 +70,7 @@ h1{margin:0;font-size:clamp(2rem,5.4vw,3.3rem);line-height:1.07;font-weight:600;
 .seg .thumb{position:absolute;top:3px;bottom:3px;left:0;width:0;border-radius:9px;background:var(--thumb);box-shadow:0 0 0 1px var(--line);transition:transform .32s var(--ease),width .32s var(--ease)}
 .seg.lang{grid-auto-columns:52px}
 .seg.lang button{height:40px;padding:0;letter-spacing:.02em}
+.seg.os button{height:40px}
 
 /* Klebende Leiste */
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--glass);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
@@ -111,7 +113,7 @@ h2{margin:0 0 6px;font-size:1.65rem;line-height:1.14;font-weight:600;letter-spac
 .cmd{display:flex;flex-direction:column;gap:5px;min-width:0}
 .cmd .name{font-size:.86rem;color:var(--muted);line-height:1.3;overflow-wrap:anywhere}
 .keys{display:flex;flex-wrap:wrap;align-items:center;gap:5px}
-.combo{display:inline-flex;gap:3px}
+.combo{display:inline-flex;flex-wrap:wrap;gap:3px}
 .or{color:var(--muted);font-size:.8rem;margin:0 2px}
 .de{font-size:.78rem;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:5px}
 .de kbd{min-width:1.6em;height:1.6em;font-size:.72rem}
@@ -156,6 +158,7 @@ footer p{margin:0 0 8px}
   .app .cmds{display:flex;flex-direction:column;gap:10px;min-width:0;flex:1}
 }
 @media (min-width:734px){.app .cmds{display:contents}}
+@media (max-width:420px){[data-os="win"] kbd.wide{padding:0 .5em}}
 @media (prefers-reduced-motion:reduce){
   .row.enter,.row:hover kbd{animation:none}
   .seg .thumb,#list{transition:none}
@@ -166,14 +169,21 @@ footer p{margin:0 0 8px}
 <header class="hero wrap">
   <div class="topline">
     <p class="eyebrow" data-t="eyebrow">Resolve 21.1 und Premiere 2026</p>
-    <div class="seg lang" role="radiogroup" data-t-aria="langLabel" aria-label="Sprache">
-      <span class="thumb" aria-hidden="true"></span>
-      <button type="button" role="radio" aria-checked="true" data-v="de" lang="de" title="Deutsch">DE</button>
-      <button type="button" role="radio" aria-checked="false" data-v="en" lang="en" title="English">EN</button>
+    <div class="switches">
+      <div class="seg os" role="radiogroup" data-t-aria="osLabel" aria-label="System">
+        <span class="thumb" aria-hidden="true"></span>
+        <button type="button" role="radio" aria-checked="true" data-v="mac">Mac</button>
+        <button type="button" role="radio" aria-checked="false" data-v="win">Windows</button>
+      </div>
+      <div class="seg lang" role="radiogroup" data-t-aria="langLabel" aria-label="Sprache">
+        <span class="thumb" aria-hidden="true"></span>
+        <button type="button" role="radio" aria-checked="true" data-v="de" lang="de" title="Deutsch">DE</button>
+        <button type="button" role="radio" aria-checked="false" data-v="en" lang="en" title="English">EN</button>
+      </div>
     </div>
   </div>
   <h1 data-t="title">Gleiche Arbeit. Andere Tasten.</h1>
-  <p class="lead" data-t-html="lead">Die wichtigsten Schnittfunktionen mit Befehlsnamen und Mac-Werksbelegung beider Programme, Zeile für Zeile. <b>Fallen</b> zeigen Tasten, die im anderen Programm etwas ganz anderes tun.</p>
+  <p class="lead" data-t-html="lead">Die wichtigsten Schnittfunktionen mit Befehlsnamen und Werksbelegung beider Programme, für Mac und Windows, Zeile für Zeile. <b>Fallen</b> zeigen Tasten, die im anderen Programm etwas ganz anderes tun.</p>
 </header>
 
 <div class="bar">
@@ -204,7 +214,7 @@ footer p{margin:0 0 8px}
     <div><h4 data-t="f1h">Woher die Tasten stammen</h4><p data-t="f1a"></p><p data-t="f1b"></p></div>
     <div><h4 data-t="f2h">Deutsche Tastatur</h4><p data-t="f2a"></p></div>
     <div><h4 data-t="f3h">Premiere-Tasten in Resolve</h4><p data-t="f3a"></p></div>
-    <div><h4 data-t="f4h">Windows</h4><p data-t="f4a"></p></div>
+    <div><h4 data-t="f4h">Mac und Windows</h4><p data-t="f4a"></p></div>
   </div>
 </footer>
 
@@ -213,41 +223,49 @@ footer p{margin:0 0 8px}
 const UI = {
   de: {
     eyebrow:'Resolve 21.1 und Premiere 2026', title:'Gleiche Arbeit. Andere Tasten.',
-    lead:'Die wichtigsten Schnittfunktionen mit Befehlsnamen und Mac-Werksbelegung beider Programme, Zeile für Zeile. <b>Fallen</b> zeigen Tasten, die im anderen Programm etwas ganz anderes tun.',
-    search:'Funktion, Befehl oder Taste', searchLabel:'Suchen', viewLabel:'Ansicht', langLabel:'Sprache', indexLabel:'Kapitel',
+    lead:'Die wichtigsten Schnittfunktionen mit Befehlsnamen und Werksbelegung beider Programme, für Mac und Windows, Zeile für Zeile. <b>Fallen</b> zeigen Tasten, die im anderen Programm etwas ganz anderes tun.',
+    search:'Funktion, Befehl oder Taste', searchLabel:'Suchen', viewLabel:'Ansicht', langLabel:'Sprache', osLabel:'System', indexLabel:'Kapitel',
     all:'Alle', diff:'Abweichend', trap:'Fallen', colFn:'Funktion',
     same:'In beiden Programmen gleich', none:'ohne Taste ab Werk', deKeys:'Deutsche Tastatur', space:'Leertaste',
     empty:'Nichts gefunden. Probier einen Befehlsnamen, ein Stichwort oder eine Taste wie cmd b.',
+    emptyW:'Nichts gefunden. Probier einen Befehlsnamen, ein Stichwort oder eine Taste wie strg b.',
     elsewhere:(label, n) => `Unter „${label}“ ist nichts dabei, in allen Funktionen gibt es ${n === 1 ? 'einen Treffer' : n + ' Treffer'}.`,
     showAll:'In allen Funktionen suchen',
     f1h:'Woher die Tasten stammen',
     f1a:'Premiere Pro 2026 (26.0): Werksbelegung aus der Datei „Adobe Premiere Pro Defaults.kys“ im Programmpaket, Mac, englische Oberfläche.',
-    f1b:'DaVinci Resolve 21.1: Referenzhandbuch, Tastentabellen der Kapitel 42 bis 46 und Angaben im Fließtext. Zwei Resolve-Tasten stehen dort nicht und kommen aus Anleitungen: R für Change Clip Speed und ⌥⌘K für Keyboard Customization. Stand November 2026.',
+    f1aW:'Premiere Pro unter Windows: Adobes offizielle Liste der Standardtasten, Stand Januar 2026. Befehle, die dort fehlen, stammen aus der Windows-Werksdatei „Adobe Premiere Pro Defaults.kys“ von 2024. Wo sich beide Quellen überschneiden, stimmen sie überein.',
+    f1b:'DaVinci Resolve 21.1: Referenzhandbuch, Tastentabellen der Kapitel 42 bis 46 und Angaben im Fließtext. Zwei Resolve-Tasten stehen dort nicht und kommen aus Anleitungen: R für Change Clip Speed und {⌥⌘K} für Keyboard Customization. Stand November 2026.',
+    f1bW:'DaVinci Resolve 21.1: Referenzhandbuch, Tastentabellen der Kapitel 42 bis 46. Laut Handbuch wird unter Windows jede ⌘-Taste zu Strg und jede ⌥-Taste zu Alt. Zwei Resolve-Tasten stehen dort nicht und kommen aus Anleitungen: R für Change Clip Speed und {⌥⌘K} für Keyboard Customization. Stand November 2026.',
     f2h:'Deutsche Tastatur',
     f2a:'Die Zeichen folgen der US-Belegung wie in beiden Handbüchern. Premiere bringt für deutsche Tastaturen eine eigene Werksbelegung mit, die betroffenen Zeilen zeigen sie klein darunter. Resolve hat keine eigene deutsche Belegung, prüf dort Tasten mit [ ] / \\ im Fenster Keyboard Customization.',
+    f2aW:'Die Zeichen folgen der US-Belegung wie in beiden Handbüchern. Premieres eigene Belegung für deutsche Tastaturen ist nur für den Mac belegt, deshalb fehlen die kleinen Hinweise in dieser Ansicht. Prüf Tasten mit ; \' = - [ ] \\ in Premiere unter Keyboard Shortcuts und in Resolve unter Keyboard Customization.',
     f3h:'Premiere-Tasten in Resolve',
     f3a:'Unter DaVinci Resolve › Keyboard Customization lässt sich oben rechts das Preset „Adobe Premiere Pro“ wählen. Es übernimmt nur die Premiere-Standardbelegung und nur Befehle, die es in Resolve gibt. Eigene Belegungen verändern die Tasten, diese Seite zeigt die Werkseinstellungen.',
-    f4h:'Windows',
-    f4a:'In Resolve wird ⌘ zu Strg und ⌥ zu Alt. Premiere hat unter Windows eine eigene Werksbelegung, dort weichen einzelne Tasten ab.'
+    f4h:'Mac und Windows',
+    f4a:'Der Schalter oben wählt die Werksbelegung. In Resolve wird ⌘ unter Windows zu Strg und ⌥ zu Alt, sonst bleibt alles gleich. Premiere hat unter Windows eine eigene Belegung, dort weichen neun Befehle dieser Tabelle ab, etwa Nudge mit Alt statt Strg und Clear In and Out mit Strg+Shift+X.'
   },
   en: {
     eyebrow:'Resolve 21.1 and Premiere 2026', title:'Same edit. Different keys.',
-    lead:'The key editing functions with command names and Mac factory shortcuts for both apps, row by row. <b>Traps</b> flag keys that do something completely different in the other app.',
-    search:'Function, command or key', searchLabel:'Search', viewLabel:'View', langLabel:'Language', indexLabel:'Sections',
+    lead:'The key editing functions with command names and factory shortcuts for both apps, on Mac and Windows, row by row. <b>Traps</b> flag keys that do something completely different in the other app.',
+    search:'Function, command or key', searchLabel:'Search', viewLabel:'View', langLabel:'Language', osLabel:'Operating system', indexLabel:'Sections',
     all:'All', diff:'Different', trap:'Traps', colFn:'Function',
     same:'Same in both apps', none:'no default key', deKeys:'German keyboard', space:'Space',
     empty:'Nothing found. Try a command name, a keyword or a key like cmd b.',
+    emptyW:'Nothing found. Try a command name, a keyword or a key like ctrl b.',
     elsewhere:(label, n) => `Nothing under “${label}”, but ${n === 1 ? 'one match' : n + ' matches'} across all functions.`,
     showAll:'Search all functions',
     f1h:'Where the keys come from',
     f1a:'Premiere Pro 2026 (26.0): factory shortcuts read from “Adobe Premiere Pro Defaults.kys” inside the app bundle, Mac, English interface.',
-    f1b:'DaVinci Resolve 21.1: Reference Manual, shortcut tables in chapters 42 to 46 plus the body text. Two Resolve keys are not in the manual and come from tutorials: R for Change Clip Speed and ⌥⌘K for Keyboard Customization. As of November 2026.',
+    f1aW:'Premiere Pro on Windows: Adobe’s official list of default shortcuts, January 2026. Commands missing there come from the Windows factory file “Adobe Premiere Pro Defaults.kys” from 2024. Where both sources overlap, they match.',
+    f1b:'DaVinci Resolve 21.1: Reference Manual, shortcut tables in chapters 42 to 46 plus the body text. Two Resolve keys are not in the manual and come from tutorials: R for Change Clip Speed and {⌥⌘K} for Keyboard Customization. As of November 2026.',
+    f1bW:'DaVinci Resolve 21.1: Reference Manual, shortcut tables in chapters 42 to 46. Per the manual, every ⌘ key becomes Ctrl and every ⌥ key becomes Alt on Windows. Two Resolve keys are not in the manual and come from tutorials: R for Change Clip Speed and {⌥⌘K} for Keyboard Customization. As of November 2026.',
     f2h:'German keyboard',
     f2a:'Keys follow the US layout, as in both manuals. Premiere ships separate defaults for German keyboards; the affected rows show them in small type underneath. Resolve has no German layout of its own, so check keys with [ ] / \\ in Keyboard Customization.',
+    f2aW:'Keys follow the US layout, as in both manuals. Premiere’s separate defaults for German keyboards are only documented for Mac, so the small hints are hidden in this view. Check keys with ; \' = - [ ] \\ in Premiere’s Keyboard Shortcuts and in Resolve’s Keyboard Customization.',
     f3h:'Premiere keys in Resolve',
     f3a:'In DaVinci Resolve › Keyboard Customization you can pick the “Adobe Premiere Pro” preset at the top right. It only copies Premiere’s default keys, and only for commands that exist in Resolve. Custom layouts change the keys; this page shows factory defaults.',
-    f4h:'Windows',
-    f4a:'In Resolve, ⌘ becomes Ctrl and ⌥ becomes Alt. Premiere has its own Windows defaults, where a few keys differ.'
+    f4h:'Mac and Windows',
+    f4a:'The switch at the top picks the factory layout. On Windows, Resolve turns ⌘ into Ctrl and ⌥ into Alt and changes nothing else. Premiere has its own Windows defaults, where nine commands in this table differ, for example Nudge with Alt instead of Ctrl and Clear In and Out with Ctrl+Shift+X.'
   }
 };
 
@@ -263,9 +281,13 @@ const CATS = [
   ['projekt',['Projekt und Ausgabe','Project and output']]
 ];
 const C = (n, ...k) => ({ n, k });
+/* W hängt einem Befehl seine Windows-Tasten an, wenn sie nicht einfach aus der Mac-Taste folgen (⌘ wird Strg, ⌥ wird Alt) */
+const W = (c, ...w) => (c.w = w, c);
 
 /* Texte als [deutsch, englisch]. r = Resolve, p = Premiere, f = Funktion, n = Hinweis, t = Falle,
-   de = Premiere mit deutscher Werksbelegung, s = zusätzliche Suchwörter */
+   de = Premiere mit deutscher Werksbelegung (nur Mac), s = zusätzliche Suchwörter.
+   nw und tw ersetzen Hinweis und Falle in der Windows-Ansicht, null blendet sie dort aus.
+   Tasten in geschweiften Klammern stehen in Mac-Schreibweise und werden für Windows umgeschrieben. */
 const ROWS = [
   { c:'werkzeuge', f:['Auswahlwerkzeug','Selection tool'], r:[C('Selection Mode','A')], p:[C('Selection Tool','V')],
     t:['V wählt in Resolve den Schnittpunkt am Playhead. A ist in Premiere die Spurauswahl vorwärts.','V selects the edit at the playhead in Resolve. A is Track Select Forward in Premiere.'], s:'pfeil pointer arrow' },
@@ -277,26 +299,27 @@ const ROWS = [
     t:['T ist in Premiere das Textwerkzeug, N schaltet in Resolve das Einrasten.','T is the Type Tool in Premiere, N toggles snapping in Resolve.'], s:'trim roll slip slide' },
   { c:'werkzeuge', f:['Alles ab dem Playhead auswählen','Select everything after the playhead'],
     r:[C(['Select Clips Forward, alle Spuren','Select Clips Forward, all tracks'],'⌥Y'), C(['Select Clips Forward, diese Spur','Select Clips Forward, this track'],'Y')], p:[C('Track Select Forward Tool','A')],
-    n:['In Premiere ein Werkzeug zum Klicken, mit ⇧ nur eine Spur. In Resolve ein Befehl ab der Playhead-Position.','In Premiere it is a tool you click, hold ⇧ for a single track. In Resolve it is a command that works from the playhead.'],
+    n:['In Premiere ein Werkzeug zum Klicken, mit {⇧} nur eine Spur. In Resolve ein Befehl ab der Playhead-Position.','In Premiere it is a tool you click, hold {⇧} for a single track. In Resolve it is a command that works from the playhead.'],
     t:['Y ist in Premiere das Slip Tool.','Y is the Slip Tool in Premiere.'], s:'spurauswahl track select' },
 
   { c:'schneiden', f:['Schnitt am Playhead','Cut at the playhead'], r:[C('Razor','⌘B'), C('Split Clip','⌘\\')], p:[C('Add Edit','⌘K'), C('Add Edit to All Tracks','⇧⌘K')],
-    n:['⌘B schneidet ausgewählte Clips. Ohne Auswahl schneidet es alle Spuren mit eingeschaltetem Auto Select.','⌘B cuts the selected clips. With nothing selected it cuts every track with Auto Select on.'], s:'cut split blade trennen' },
+    n:['{⌘B} schneidet ausgewählte Clips. Ohne Auswahl schneidet es alle Spuren mit eingeschaltetem Auto Select.','{⌘B} cuts the selected clips. With nothing selected it cuts every track with Auto Select on.'], s:'cut split blade trennen' },
   { c:'schneiden', f:['Clip löschen, die Lücke bleibt','Delete a clip, leave the gap'], r:[C('Delete Selected','⌫')], p:[C('Clear','⌫')], s:'löschen entfernen lift delete remove' },
   { c:'schneiden', f:['Clip löschen, die Lücke schließt sich','Delete a clip, close the gap'], r:[C('Ripple Delete','⌦')], p:[C('Ripple Delete','⇧⌦','⌥⌫')],
-    n:['Am MacBook fehlt die ⌦-Taste, dort fn ⌫ drücken. In Premiere geht ⌥⌫ auch ohne fn.','MacBooks have no ⌦ key, press fn ⌫ instead. In Premiere ⌥⌫ works without fn.'], s:'ripple löschen lücke schließen gap' },
+    n:['Am MacBook fehlt die ⌦-Taste, dort fn ⌫ drücken. In Premiere geht ⌥⌫ auch ohne fn.','MacBooks have no ⌦ key, press fn ⌫ instead. In Premiere ⌥⌫ works without fn.'], nw:null, s:'ripple löschen lücke schließen gap' },
   { c:'schneiden', f:['Bereich zwischen In und Out entfernen, die Lücke bleibt','Remove the In to Out range, leave the gap'], r:[C(['Delete mit In und Out','Delete with In and Out'],'⌫')], p:[C('Lift',';')], de:['⌘´'], s:'lift herausheben range' },
   { c:'schneiden', f:['Bereich zwischen In und Out entfernen, die Lücke schließt sich','Remove the In to Out range, close the gap'], r:[C(['Ripple Delete mit In und Out','Ripple Delete with In and Out'],'⌦')], p:[C('Extract',"'")], de:['⌃Ä'], s:'extract herausziehen range' },
-  { c:'schneiden', f:['Ausschneiden, die Lücke schließt sich','Cut to the clipboard, close the gap'], r:[C('Ripple Cut','⇧⌘X')], p:[C(null)], s:'ripple cut ausschneiden' },
+  { c:'schneiden', f:['Ausschneiden, die Lücke schließt sich','Cut to the clipboard, close the gap'], r:[C('Ripple Cut','⇧⌘X')], p:[C(null)],
+    tw:['{⇧⌘X} löscht in Premiere nur In und Out.','{⇧⌘X} only clears In and Out in Premiere.'], s:'ripple cut ausschneiden' },
   { c:'schneiden', f:['Rückgängig und wiederholen','Undo and redo'], r:[C('Undo, Redo','⌘Z','⇧⌘Z')], p:[C('Undo, Redo','⌘Z','⇧⌘Z')], s:'undo redo zurück' },
 
   { c:'einfuegen', f:['Einfügen, alles dahinter rückt nach','Insert, pushing everything after it'], r:[C('Insert Edit','F9')], p:[C('Insert',',')],
-    n:['F9 bis F12 am MacBook mit fn drücken.','On a MacBook, press F9 to F12 with fn.'],
+    n:['F9 bis F12 am MacBook mit fn drücken.','On a MacBook, press F9 to F12 with fn.'], nw:['Auf vielen Laptops F9 bis F12 zusammen mit Fn drücken.','On many laptops, press F9 to F12 together with Fn.'],
     t:[', schiebt in Resolve den gewählten Clip einen Frame nach links.',', nudges the selected clip one frame left in Resolve.'], s:'insert einfügen' },
   { c:'einfuegen', f:['Überschreiben','Overwrite'], r:[C('Overwrite Edit','F10')], p:[C('Overwrite','.')],
     t:['. schiebt in Resolve den gewählten Clip einen Frame nach rechts.','. nudges the selected clip one frame right in Resolve.'], s:'overwrite überschreiben' },
   { c:'einfuegen', f:['Clip in der Timeline ersetzen','Replace a clip in the timeline'], r:[C('Replace Edit','F11')], p:[C(null)],
-    n:['In Premiere den neuen Clip mit gedrückter ⌥-Taste auf den alten ziehen.','In Premiere, drag the new clip onto the old one while holding ⌥.'], s:'replace ersetzen' },
+    n:['In Premiere den neuen Clip mit gedrückter {⌥}-Taste auf den alten ziehen.','In Premiere, drag the new clip onto the old one while holding {⌥}.'], s:'replace ersetzen' },
   { c:'einfuegen', f:['Auf eine freie Spur darüber legen','Place on a free track above'], r:[C('Place On Top','F12')], p:[C(null)], s:'place on top oben drauf' },
   { c:'einfuegen', f:['Ans Ende der Timeline hängen','Append to the end of the timeline'], r:[C('Append to End','⇧F12')], p:[C(null)], s:'append anhängen ende' },
   { c:'einfuegen', f:['Gleiches Bild im Original finden','Find the same frame in the source clip'], r:[C('Match Frame','F')], p:[C('Match Frame','F')], s:'match frame quelle original' },
@@ -306,11 +329,11 @@ const ROWS = [
   { c:'trimmen', f:['Clipanfang bis zum Playhead wegschneiden, die Lücke schließt sich','Trim the clip start to the playhead, close the gap'], r:[C('Ripple Trim Start','⇧⌘[')], p:[C('Ripple Trim Previous Edit to Playhead','Q')], s:'ripple trim anfang start' },
   { c:'trimmen', f:['Clipende ab dem Playhead wegschneiden, die Lücke schließt sich','Trim the clip end from the playhead, close the gap'], r:[C('Ripple Trim End','⇧⌘]')], p:[C('Ripple Trim Next Edit to Playhead','W')],
     t:['W startet in Resolve den Dynamic Trim Mode.','W starts Dynamic Trim Mode in Resolve.'], s:'ripple trim ende end' },
-  { c:'trimmen', f:['Clipanfang bis zum Playhead trimmen, die Lücke bleibt','Trim the clip start to the playhead, leave the gap'], r:[C('Trim Start','⇧[')], p:[C('Trim Previous Edit to Playhead','⌥Q')], s:'trim start' },
-  { c:'trimmen', f:['Clipende ab dem Playhead trimmen, die Lücke bleibt','Trim the clip end from the playhead, leave the gap'], r:[C('Trim End','⇧]')], p:[C('Trim Next Edit to Playhead','⌥W')], s:'trim end' },
+  { c:'trimmen', f:['Clipanfang bis zum Playhead trimmen, die Lücke bleibt','Trim the clip start to the playhead, leave the gap'], r:[C('Trim Start','⇧[')], p:[W(C('Trim Previous Edit to Playhead','⌥Q'),'⌃⌥Q')], s:'trim start' },
+  { c:'trimmen', f:['Clipende ab dem Playhead trimmen, die Lücke bleibt','Trim the clip end from the playhead, leave the gap'], r:[C('Trim End','⇧]')], p:[W(C('Trim Next Edit to Playhead','⌥W'),'⌃⌥W')], s:'trim end' },
   { c:'trimmen', f:['Gewählten Schnittpunkt zum Playhead ziehen','Extend the selected edit to the playhead'], r:[C('Extend Edit','E')], p:[C('Extend Selected Edit to Playhead','E')], s:'extend edit verlängern' },
-  { c:'trimmen', f:['Clip oder Schnitt einen Frame verschieben','Nudge a clip or edit one frame'], r:[C('Nudge',',','.')], p:[C('Nudge Clip Selection One Frame','⌘←','⌘→')], s:'nudge verschieben frame' },
-  { c:'trimmen', f:['Clip oder Schnitt um fünf Frames verschieben','Nudge a clip or edit five frames'], r:[C('Fast Nudge','⇧,','⇧.')], p:[C('Nudge Clip Selection Five Frames','⇧⌘←','⇧⌘→')],
+  { c:'trimmen', f:['Clip oder Schnitt einen Frame verschieben','Nudge a clip or edit one frame'], r:[C('Nudge',',','.')], p:[W(C('Nudge Clip Selection One Frame','⌘←','⌘→'),'⌥←','⌥→')], s:'nudge verschieben frame' },
+  { c:'trimmen', f:['Clip oder Schnitt um fünf Frames verschieben','Nudge a clip or edit five frames'], r:[C('Fast Nudge','⇧,','⇧.')], p:[W(C('Nudge Clip Selection Five Frames','⇧⌘←','⇧⌘→'),'⌥⇧←','⌥⇧→')],
     n:['In Resolve ist die Schrittweite in den Einstellungen änderbar.','In Resolve the step size can be changed in the preferences.'], s:'fast nudge verschieben' },
   { c:'trimmen', f:['Clip eine Spur nach oben oder unten','Move a clip up or down a track'], r:[C('Move Clips Up, Down','⌥↑','⌥↓')], p:[C('Nudge Clip Selection Up, Down','⌥↑','⌥↓')], s:'spur hoch runter verschieben track' },
   { c:'trimmen', f:['Clip am Playhead auswählen','Select the clip at the playhead'], r:[C('Select Clip Intersecting Playhead','⇧V')], p:[C('Select Clip at Playhead','D')],
@@ -324,30 +347,31 @@ const ROWS = [
   { c:'abspielen', f:['Größerer Schritt zurück oder vor','Bigger step back or forward'], r:[C('Step One Second','⇧←','⇧→')], p:[C('Step Back, Forward Five Frames','⇧←','⇧→')], diff:true,
     t:['Gleiche Tasten, anderer Weg: Resolve springt eine Sekunde, Premiere fünf Frames.','Same keys, different distance: Resolve jumps one second, Premiere five frames.'], s:'sekunde springen second' },
   { c:'abspielen', f:['Zum vorherigen oder nächsten Schnitt','Previous or next edit'], r:[C('Previous, Next Edit','↑','↓')], p:[C('Go to Previous, Next Edit Point','↑','↓')],
-    n:['Premiere springt nur auf Zielspuren, mit ⇧ auf allen Spuren.','Premiere only jumps on targeted tracks, add ⇧ for all tracks.'], s:'schnitt springen edit' },
+    n:['Premiere springt nur auf Zielspuren, mit {⇧} auf allen Spuren.','Premiere only jumps on targeted tracks, add {⇧} for all tracks.'], s:'schnitt springen edit' },
   { c:'abspielen', f:['Zum Anfang oder Ende der Timeline','Start or end of the timeline'], r:[C('Timeline Start, End','Home','End')], p:[C('Go to Sequence-Clip Start, End','Home','End')],
-    n:['Am MacBook fn ← und fn →.','On a MacBook, fn ← and fn →.'], s:'anfang ende home end' },
+    n:['Am MacBook fn ← und fn →.','On a MacBook, fn ← and fn →.'], nw:null, s:'anfang ende home end' },
   { c:'abspielen', f:['Um den Playhead herum abspielen','Play around the playhead'], r:[C('Play Around Current Frame','/')], p:[C('Play Around','⇧K')],
     t:['/ setzt in Premiere In und Out um die Auswahl.','/ sets In and Out around the selection in Premiere.'], s:'play around' },
-  { c:'abspielen', f:['Von In bis Out abspielen','Play from In to Out'], r:[C('Play In to Out','⌥/')], p:[C('Play In to Out','⌥K')],
-    t:['⌥K stoppt in Resolve und springt zur letzten Position zurück.','⌥K stops and returns to the last position in Resolve.'], s:'in out abspielen' },
+  { c:'abspielen', f:['Von In bis Out abspielen','Play from In to Out'], r:[C('Play In to Out','⌥/')], p:[W(C('Play In to Out','⌥K'),'⌃⇧Space')],
+    t:['⌥K stoppt in Resolve und springt zur letzten Position zurück.','⌥K stops and returns to the last position in Resolve.'], tw:null, s:'in out abspielen' },
   { c:'abspielen', f:['Schleife ein und aus','Loop on and off'], r:[C('Loop, Unloop','⌘/')], p:[C(null)],
     n:['Premiere: Schleifenknopf im Monitor, ohne Taste ab Werk.','Premiere: loop button in the monitor, no default key.'], s:'loop schleife' },
   { c:'abspielen', f:['Bild im Vollbild','Full screen viewer'], r:[C('Cinema Viewer','⌘F')], p:[C('Toggle Full Screen','⌃`')], de:['⌃Ü'],
-    t:['⌘F öffnet in Premiere die Suche.','⌘F opens Find in Premiere.'], s:'vollbild fullscreen cinema' },
+    t:['{⌘F} öffnet in Premiere die Suche.','{⌘F} opens Find in Premiere.'], s:'vollbild fullscreen cinema' },
 
   { c:'markieren', f:['In und Out setzen','Set In and Out'], r:[C('Mark In, Mark Out','I','O')], p:[C('Mark In, Mark Out','I','O')], s:'in out setzen mark' },
   { c:'markieren', f:['Zu In oder Out springen','Go to In or Out'], r:[C('Go to In, Out','⇧I','⇧O')], p:[C('Go to In, Out','⇧I','⇧O')], s:'in out springen' },
-  { c:'markieren', f:['In und Out löschen','Clear In and Out'], r:[C('Clear In and Out','⌥X')], p:[C('Clear In and Out','⌥X')], s:'in out löschen' },
+  { c:'markieren', f:['In und Out löschen','Clear In and Out'], r:[C('Clear In and Out','⌥X')], p:[W(C('Clear In and Out','⌥X'),'⌃⇧X')],
+    tw:['{⇧⌘X} ist in Resolve Ripple Cut und schneidet die Auswahl aus, die Lücke schließt sich.','{⇧⌘X} is Ripple Cut in Resolve: it cuts the selection and closes the gap.'], s:'in out löschen' },
   { c:'markieren', f:['In und Out um den Clip am Playhead','Mark the clip at the playhead'], r:[C('Mark Clip','X')], p:[C('Mark Clip','X')], s:'mark clip' },
   { c:'markieren', f:['In und Out um die Auswahl','Mark the selection'], r:[C('Mark Selection','⇧A')], p:[C('Mark Selection','/')], de:['<'],
-    t:['⇧A ist in Premiere die Spurauswahl rückwärts.','⇧A is Track Select Backward in Premiere.'], s:'mark selection auswahl' },
+    t:['{⇧A} ist in Premiere die Spurauswahl rückwärts.','{⇧A} is Track Select Backward in Premiere.'], s:'mark selection auswahl' },
   { c:'markieren', f:['Marker setzen','Add a marker'], r:[C('Add Marker','M')], p:[C('Add Marker','M')], s:'marker' },
   { c:'markieren', f:['Marker setzen und gleich beschriften','Add a marker and name it'], r:[C('Add and Modify Marker','⌘M')], p:[C(null)],
-    n:['Premiere: Marker doppelklicken.','Premiere: double-click the marker.'], t:['⌘M öffnet in Premiere Export Media.','⌘M opens Export Media in Premiere.'], s:'marker notiz kommentar note' },
+    n:['Premiere: Marker doppelklicken.','Premiere: double-click the marker.'], t:['{⌘M} öffnet in Premiere Export Media.','{⌘M} opens Export Media in Premiere.'], s:'marker notiz kommentar note' },
   { c:'markieren', f:['Zum nächsten oder vorherigen Marker','Next or previous marker'], r:[C('Next, Previous Marker','⇧↓','⇧↑')], p:[C('Go to Next Marker','⇧M'), C('Go to Previous Marker','⇧⌘M')],
-    t:['⇧M öffnet in Resolve den Marker zum Bearbeiten.','⇧M opens the marker for editing in Resolve.'], s:'marker springen' },
-  { c:'markieren', f:['Marker löschen','Delete a marker'], r:[C('Delete Marker','⌥M')], p:[C('Clear Selected Marker','⌥M')], s:'marker löschen' },
+    t:['{⇧M} öffnet in Resolve den Marker zum Bearbeiten.','{⇧M} opens the marker for editing in Resolve.'], s:'marker springen' },
+  { c:'markieren', f:['Marker löschen','Delete a marker'], r:[C('Delete Marker','⌥M')], p:[W(C('Clear Selected Marker','⌥M'),'⌃⌥M')], s:'marker löschen' },
 
   { c:'timeline', f:['Timeline ein- und auszoomen','Zoom the timeline in and out'], r:[C('Zoom In, Zoom Out','⌘=','⌘-')], p:[C('Zoom In, Zoom Out','=','-')], de:['+','-'], s:'zoom' },
   { c:'timeline', f:['Ganze Timeline ins Fenster','Fit the whole timeline'], r:[C('Full Extent Zoom','⇧Z')], p:[C('Zoom to Sequence','\\')], de:['#'], s:'zoom fit ganze timeline' },
@@ -356,16 +380,16 @@ const ROWS = [
   { c:'timeline', f:['Verknüpfte Auswahl ein und aus','Linked selection on and off'], r:[C('Linked Selection','⇧⌘L')], p:[C(null)],
     n:['Premiere: Schalter oben links in der Timeline.','Premiere: toggle at the top left of the timeline.'], s:'linked selection verknüpft' },
   { c:'timeline', f:['Bild und Ton verbinden oder trennen','Link or unlink video and audio'], r:[C('Link Clips','⌥⌘L')], p:[C('Link','⌘L')], s:'link unlink verbinden trennen' },
-  { c:'timeline', f:['Clip aus- und einschalten','Disable or enable a clip'], r:[C('Enable, Disable','D')], p:[C('Enable','⇧⌘E')],
+  { c:'timeline', f:['Clip aus- und einschalten','Disable or enable a clip'], r:[C('Enable, Disable','D')], p:[W(C('Enable','⇧⌘E'),'⇧E')],
     t:['D wählt in Premiere den Clip am Playhead aus.','D selects the clip at the playhead in Premiere.'], s:'disable enable ausschalten' },
 
   { c:'clips', f:['Tempo per Dialog ändern','Change speed in a dialog'], r:[C('Change Clip Speed','R')], p:[C('Speed/Duration','⌘R')],
-    t:['R und ⌘R sind vertauscht: R ist in Premiere das Rate Stretch Tool, ⌘R öffnet in Resolve die Retime Controls.','R and ⌘R are swapped: R is the Rate Stretch Tool in Premiere, ⌘R opens Retime Controls in Resolve.'], s:'speed tempo geschwindigkeit zeitlupe slow motion' },
+    t:['R und {⌘R} sind vertauscht: R ist in Premiere das Rate Stretch Tool, {⌘R} öffnet in Resolve die Retime Controls.','R and {⌘R} are swapped: R is the Rate Stretch Tool in Premiere, {⌘R} opens Retime Controls in Resolve.'], s:'speed tempo geschwindigkeit zeitlupe slow motion' },
   { c:'clips', f:['Tempo direkt in der Timeline ziehen','Change speed by dragging in the timeline'], r:[C('Retime Controls','⌘R')], p:[C('Rate Stretch Tool','R')], s:'retime rate stretch speed' },
   { c:'clips', f:['Standbild aus dem Clip','Freeze frame'], r:[C('Freeze Frame','⇧R')], p:[C(null)],
-    n:['Premiere: Add Frame Hold, ab Werk ohne Taste.','Premiere: Add Frame Hold, no default key.'], t:['⇧R ist in Premiere Reverse Match Frame.','⇧R is Reverse Match Frame in Premiere.'], s:'freeze frame hold standbild' },
+    n:['Premiere: Add Frame Hold, ab Werk ohne Taste.','Premiere: Add Frame Hold, no default key.'], t:['{⇧R} ist in Premiere Reverse Match Frame.','{⇧R} is Reverse Match Frame in Premiere.'], s:'freeze frame hold standbild' },
   { c:'clips', f:['Dauer ändern','Change duration'], r:[C('Change Clip Duration','⌘D')], p:[C('Speed/Duration','⌘R')],
-    t:['⌘D legt in Premiere eine Videoblende.','⌘D applies a video transition in Premiere.'], s:'duration dauer länge length' },
+    t:['{⌘D} legt in Premiere eine Videoblende.','{⌘D} applies a video transition in Premiere.'], s:'duration dauer länge length' },
   { c:'clips', f:['Standardblende für Bild und Ton','Default transition for video and audio'], r:[C('Add Transition','⌘T')], p:[C('Apply Default Transitions to Selection','⇧D')], s:'transition blende übergang dissolve' },
   { c:'clips', f:['Nur Videoblende','Video transition only'], r:[C('Add Video Only Transition','⌥T')], p:[C('Apply Video Transition','⌘D')], s:'transition video blende' },
   { c:'clips', f:['Nur Audioblende','Audio transition only'], r:[C('Add Audio Only Transition','⇧T')], p:[C('Apply Audio Transition','⇧⌘D')], s:'crossfade audio blende' },
@@ -379,57 +403,106 @@ const ROWS = [
   { c:'projekt', f:['Tastenbelegung öffnen','Open keyboard shortcuts'], r:[C('Keyboard Customization','⌥⌘K')], p:[C('Keyboard Shortcuts','⌥⌘K')], s:'tastatur shortcuts keyboard' },
   { c:'projekt', f:['Film exportieren','Export the film'], r:[C(null)], p:[C('Export Media','⌘M')],
     n:['Resolve: über die Deliver-Seite, ohne Exporttaste ab Werk.','Resolve: use the Deliver page, there is no default export key.'], s:'export deliver render ausspielen' },
-  { c:'projekt', f:['Einzelbild sichern','Save a still frame'], r:[C('Grab Still','⌥⌘G')], p:[C('Export Frame','⇧E')],
+  { c:'projekt', f:['Einzelbild sichern','Save a still frame'], r:[C('Grab Still','⌥⌘G')], p:[W(C('Export Frame','⇧E'),'⌃⇧E')],
     n:['Resolve legt das Bild auf der Color-Seite in der Gallery ab, von dort exportierst du es.','Resolve stores the frame in the Gallery on the Color page; export it from there.'], s:'still frame standbild screenshot' }
 ];
 
-/* ---------- Sprache ---------- */
+/* ---------- Sprache und System ---------- */
 let lang = 'de';
+let os = 'mac';
 const L = v => Array.isArray(v) ? v[lang === 'de' ? 0 : 1] : v;
-const T = k => UI[lang][k];
+const T = k => { const u = UI[lang]; return (os === 'win' && (k + 'W') in u) ? u[k + 'W'] : u[k]; };
+/* Link-Zusatz: #en, #de, #en-win, #de-mac. Ohne System-Zusatz gilt die letzte Wahl, sonst das Gerät. */
+function hashParts(){
+  const parts = location.hash.replace('#','').toLowerCase().split(/[-,&+]/);
+  return { lang: parts.find(p => p === 'de' || p === 'en'), os: parts.find(p => p === 'mac' || p === 'win') };
+}
+const deviceOS = (() => {
+  try {
+    const p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '') + ' ' + navigator.userAgent;
+    if (/Android|iPhone|iPad|iPod/i.test(p)) return 'mac';
+    return /Win|Linux|CrOS/i.test(p) ? 'win' : 'mac';
+  } catch(e) { return 'mac'; }
+})();
 function initialLang(){
-  const h = location.hash.replace('#','').toLowerCase();
-  if (h === 'en' || h === 'de') return h;
+  const h = hashParts().lang; if (h) return h;
   try { const p = new URLSearchParams(location.search).get('lang'); if (p === 'en' || p === 'de') return p; } catch(e) {}
   try { const s = localStorage.getItem('rp-lang'); if (s === 'en' || s === 'de') return s; } catch(e) {}
   return (navigator.language || 'de').toLowerCase().startsWith('de') ? 'de' : 'en';
+}
+function initialOS(){
+  const h = hashParts().os; if (h) return h;
+  try { const p = new URLSearchParams(location.search).get('os'); if (p === 'mac' || p === 'win') return p; } catch(e) {}
+  try { const s = localStorage.getItem('rp-os'); if (s === 'mac' || s === 'win') return s; } catch(e) {}
+  return deviceOS;
+}
+function writeHash(){
+  try { history.replaceState(null, '', '#' + lang + (os !== deviceOS ? '-' + os : '')); } catch(e) {}
 }
 
 /* ---------- Tasten zeichnen ---------- */
 const MODS = '⌃⌥⇧⌘';
 const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-let kIndex = 0;
-function combo(str){
+function split(str){
   let mods = '', key = str;
   while (key.length > 1 && MODS.includes(key[0])) { mods += key[0]; key = key.slice(1); }
-  const parts = [...mods].map(m => `<kbd class="mod" style="--k:${kIndex++}">${m}</kbd>`);
-  const lab = key === 'Space' ? T('space') : key;
+  return [mods, key];
+}
+/* Mac-Schreibweise in Windows-Schreibweise: ⌘ und ⌃ werden Strg (⌃), ⌥ wird Alt, Reihenfolge Strg Alt Shift */
+function toWin(str){
+  const [m, k] = split(str);
+  const set = new Set([...m].map(c => c === '⌘' ? '⌃' : c));
+  return [...'⌃⌥⇧'].filter(c => set.has(c)).join('') + k;
+}
+const WL = {
+  de: { '⌃':'Strg', '⌥':'Alt', '⇧':'Shift', '⌫':'Rücktaste', '⌦':'Entf', 'Home':'Pos1', 'End':'Ende' },
+  en: { '⌃':'Ctrl', '⌥':'Alt', '⇧':'Shift', '⌫':'Backspace', '⌦':'Delete' }
+};
+const label = k => k === 'Space' ? T('space') : (os === 'win' ? (WL[lang][k] || k) : k);
+const keysFor = c => os === 'win' ? (c.w || c.k.map(toWin)) : c.k;
+/* Tasten im Fließtext, {⌘B} wird auf dem Mac ⌘B und unter Windows Strg+B */
+function plain(tok){
+  if (os === 'mac') return tok;
+  const onlyMods = [...tok].every(c => MODS.includes(c));
+  const [m, k] = onlyMods ? [toWin(tok + 'X').slice(0, -1), ''] : split(toWin(tok));
+  return [...[...m].map(label), ...(k ? [label(k)] : [])].join('+');
+}
+const txt = s => String(s).replace(/\{([^}]+)\}/g, (_, t) => plain(t));
+const pick = (r, k) => (os === 'win' && (k + 'w') in r) ? r[k + 'w'] : r[k];
+let kIndex = 0;
+function combo(str){
+  const [mods, key] = split(str);
+  const parts = [...mods].map(m => { const l = label(m); return `<kbd class="${l.length > 2 ? 'wide' : 'mod'}" style="--k:${kIndex++}">${esc(l)}</kbd>`; });
+  const lab = label(key);
   parts.push(`<kbd class="${lab.length > 2 ? 'wide' : ''}" style="--k:${kIndex++}">${esc(lab)}</kbd>`);
   return `<span class="combo">${parts.join('')}</span>`;
 }
 const keysHTML = list => list.map(combo).join('<span class="or">/</span>');
 function cmdHTML(c){
   if (!c.n && !c.k.length) return `<div class="cmd"><span class="dash">${T('none')}</span></div>`;
-  return `<div class="cmd"><span class="name">${esc(L(c.n))}</span><span class="keys">${keysHTML(c.k)}</span></div>`;
+  return `<div class="cmd"><span class="name">${esc(L(c.n))}</span><span class="keys">${keysHTML(keysFor(c))}</span></div>`;
 }
 
-/* ---------- Ableitungen, Suche in beiden Sprachen ---------- */
+/* ---------- Ableitungen je System, Suche in beiden Sprachen ---------- */
 function norm(s){
   return s.toLowerCase()
-    .replace(/\b(cmd|command|befehl)\b\s*\+?\s*/g,'⌘').replace(/\b(shift|umschalt)\b\s*\+?\s*/g,'⇧')
+    .replace(/\b(cmd|command|befehl)\b\s*\+?\s*/g, os === 'win' ? '⌃' : '⌘').replace(/\b(shift|umschalt)\b\s*\+?\s*/g,'⇧')
     .replace(/\b(opt|option|alt|wahl)\b\s*\+?\s*/g,'⌥').replace(/\b(ctrl|control|strg)\b\s*\+?\s*/g,'⌃');
 }
 const both = v => Array.isArray(v) ? v : [v];
-const flat = arr => JSON.stringify(arr.flatMap(c => c.k));
-ROWS.forEach((r, i) => {
-  r.id = i;
-  r.same = !r.diff && r.r[0].k.length > 0 && flat(r.r) === flat(r.p);
-  r.trap = !!r.t;
-  const words = [...both(r.f), ...(r.n ? r.n : []), ...(r.t ? r.t : []), r.s,
-    ...r.r.flatMap(c => c.n ? both(c.n) : []), ...r.p.flatMap(c => c.n ? both(c.n) : []),
-    ...r.r.flatMap(c => c.k), ...r.p.flatMap(c => c.k), ...(r.de || [])];
-  r.hay = norm(words.filter(Boolean).join(' '));
-});
+ROWS.forEach((r, i) => { r.id = i; });
+function derive(){
+  ROWS.forEach(r => {
+    const kr = r.r.flatMap(keysFor), kp = r.p.flatMap(keysFor);
+    r.same = !r.diff && kr.length > 0 && JSON.stringify(kr) === JSON.stringify(kp);
+    r.trap = !!pick(r, 't');
+    const keyWords = os === 'win' ? [...kr, ...kp].flatMap(k => { const key = split(k)[1]; return [WL.de[key], WL.en[key]]; }) : [];
+    const words = [...both(r.f), ...(pick(r, 'n') || []), ...(pick(r, 't') || []), r.s,
+      ...r.r.flatMap(c => c.n ? both(c.n) : []), ...r.p.flatMap(c => c.n ? both(c.n) : []),
+      ...kr, ...kp, ...keyWords, ...(os === 'mac' ? (r.de || []) : [])];
+    r.hay = norm(words.filter(Boolean).map(txt).join(' '));
+  });
+}
 
 /* ---------- Aufbau ---------- */
 const list = document.getElementById('list');
@@ -443,10 +516,11 @@ function renderList(){
   list.innerHTML = CATS.map(([id, name]) => {
     const rows = ROWS.filter(r => r.c === id).map(r => {
       kIndex = 0;
-      const status = r.trap ? `<p class="trap">${esc(L(r.t))}</p>` : (r.same ? `<p class="same">${T('same')}</p>` : '');
-      const deLine = r.de ? `<div class="de">${T('deKeys')} ${r.de.map(combo).join('<span class="or">/</span>')}</div>` : '';
+      const note = pick(r, 'n');
+      const status = r.trap ? `<p class="trap">${esc(txt(L(pick(r, 't'))))}</p>` : (r.same ? `<p class="same">${T('same')}</p>` : '');
+      const deLine = r.de && os === 'mac' ? `<div class="de">${T('deKeys')} ${r.de.map(combo).join('<span class="or">/</span>')}</div>` : '';
       return `<article class="row" data-id="${r.id}">
-        <div class="fn"><h3>${esc(L(r.f))}</h3>${r.n ? `<p class="note">${esc(L(r.n))}</p>` : ''}${status}</div>
+        <div class="fn"><h3>${esc(L(r.f))}</h3>${note ? `<p class="note">${esc(txt(L(note)))}</p>` : ''}${status}</div>
         <div class="app"><span class="lab">Resolve</span><div class="cmds">${r.r.map(cmdHTML).join('')}</div></div>
         <div class="app"><span class="lab">Premiere</span><div class="cmds">${r.p.map(cmdHTML).join('')}${deLine}</div></div>
       </article>`;
@@ -459,7 +533,8 @@ function renderList(){
 
 function renderUI(){
   document.documentElement.lang = lang;
-  document.querySelectorAll('[data-t]').forEach(el => { el.textContent = T(el.dataset.t); });
+  document.documentElement.dataset.os = os;
+  document.querySelectorAll('[data-t]').forEach(el => { el.textContent = txt(T(el.dataset.t)); });
   document.querySelectorAll('[data-t-html]').forEach(el => { el.innerHTML = T(el.dataset.tHtml); });
   document.querySelectorAll('[data-t-ph]').forEach(el => { el.placeholder = T(el.dataset.tPh); });
   document.querySelectorAll('[data-t-aria]').forEach(el => { el.setAttribute('aria-label', T(el.dataset.tAria)); });
@@ -522,16 +597,24 @@ const viewSeg = makeSeg(document.querySelector('.seg.view'), () => mode, v => {
   try { localStorage.setItem('rp-mode', mode); } catch(e) {}
 });
 const langSeg = makeSeg(document.querySelector('.seg.lang'), () => lang, v => setLang(v, true));
+const osSeg = makeSeg(document.querySelector('.seg.os'), () => os, v => setOS(v, true));
 
-function setLang(v, fromUser){
-  lang = v;
-  try { localStorage.setItem('rp-lang', lang); } catch(e) {}
-  try { history.replaceState(null, '', '#' + lang); } catch(e) {}
-  const swap = () => { renderUI(); renderList(); apply(false); langSeg.mark(); langSeg.place(); viewSeg.place(); };
+function rebuild(fromUser){
+  const swap = () => { renderUI(); derive(); renderList(); apply(false); updateCounts(); [langSeg, osSeg].forEach(s => s.mark()); placeAll(); };
   if (fromUser && !reduce) {
     list.classList.add('fade');
     setTimeout(() => { swap(); list.classList.remove('fade'); }, 180);
   } else swap();
+}
+function setLang(v, fromUser){
+  lang = v;
+  try { localStorage.setItem('rp-lang', lang); } catch(e) {}
+  writeHash(); rebuild(fromUser);
+}
+function setOS(v, fromUser){
+  os = v;
+  if (fromUser) { try { localStorage.setItem('rp-os', os); } catch(e) {} }
+  writeHash(); rebuild(fromUser);
 }
 
 document.getElementById('show-all').addEventListener('click', () => document.getElementById('m-all').click());
@@ -546,8 +629,12 @@ index.addEventListener('click', e => {
   document.getElementById('k-' + a.dataset.cat).scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
 });
 addEventListener('hashchange', () => {
-  const h = location.hash.replace('#','').toLowerCase();
-  if ((h === 'en' || h === 'de') && h !== lang) setLang(h, true);
+  const h = hashParts();
+  const changed = (h.lang && h.lang !== lang) || (h.os && h.os !== os);
+  if (!changed) return;
+  if (h.lang) { lang = h.lang; try { localStorage.setItem('rp-lang', lang); } catch(e) {} }
+  if (h.os) os = h.os;
+  rebuild(true);
 });
 
 /* Zähler */
@@ -562,11 +649,15 @@ function tween(el, to){
 /* Start */
 try { const m = localStorage.getItem('rp-mode'); if (['all','diff','trap'].includes(m)) mode = m; } catch(e) {}
 lang = initialLang();
-renderUI(); renderList(); apply(false);
-viewSeg.mark(); langSeg.mark();
-const counts = { all: ROWS.length, diff: ROWS.filter(r => !r.same).length, trap: ROWS.filter(r => r.trap).length };
-document.querySelectorAll('.seg .num').forEach(el => tween(el, counts[el.dataset.c]));
-const placeAll = () => { viewSeg.place(); langSeg.place(); };
+os = initialOS();
+function updateCounts(){
+  const counts = { all: ROWS.length, diff: ROWS.filter(r => !r.same).length, trap: ROWS.filter(r => r.trap).length };
+  document.querySelectorAll('.seg .num').forEach(el => tween(el, counts[el.dataset.c]));
+}
+function placeAll(){ viewSeg.place(); langSeg.place(); osSeg.place(); }
+renderUI(); derive(); renderList(); apply(false);
+viewSeg.mark(); langSeg.mark(); osSeg.mark();
+updateCounts();
 requestAnimationFrame(placeAll);
 addEventListener('resize', placeAll);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeAll);
